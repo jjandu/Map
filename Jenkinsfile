@@ -6,5 +6,10 @@ pipeline {
         echo 'Start of Process'
       }
     }
+    stage('Step 2') {
+      steps {
+        bat 'Map_Shares.bat'
+      }
+    }
   }
 }
