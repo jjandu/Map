@@ -21,8 +21,17 @@ pipeline {
       }
     }
     stage('powershell') {
-      steps {
-        powershell 'Get-Eventlog-app.ps1'
+      parallel {
+        stage('powershell') {
+          steps {
+            powershell 'Get-Eventlog-app.ps1'
+          }
+        }
+        stage('job built') {
+          steps {
+            echo 'MOFO'
+          }
+        }
       }
     }
   }
