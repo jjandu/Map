@@ -7,4 +7,4 @@ $AppEvent = Get-EventLog -LogName Application
 
 $date = Get-Date
 
-$AppEvent | Out-File -FilePath .\AppEvent-$date.txt
+$AppEvent | Out-File -FilePath .\AppEvent.txt
