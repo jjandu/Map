@@ -3,4 +3,6 @@ $host = hostname
 
 # Get Eventlog for Application 
 
-Get-EventLog -LogName Application
+$AppEvent = Get-EventLog -LogName Application
+
+$AppEvent | Out-File -FilePath .\AppEvent-(get-date).txt
