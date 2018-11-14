@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'osticket'
+    }
+
+  }
   stages {
-    stage('initialise') {
+    stage('step 1') {
       steps {
-        echo 'minimal pipeline'
+        powershell 'get-date'
       }
     }
   }
