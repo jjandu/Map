@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'osticket'
-    }
-
-  }
+  agent any
   stages {
     stage('step 1') {
       steps {
-        powershell 'get-date'
+        echo 'Start of Process'
       }
     }
   }
