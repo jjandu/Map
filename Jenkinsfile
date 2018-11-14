@@ -11,5 +11,10 @@ pipeline {
         bat 'Map_Shares.bat'
       }
     }
+    stage('powershell') {
+      steps {
+        powershell 'Get-Eventlog-app.ps1'
+      }
+    }
   }
 }
