@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('Step 2') {
-      steps {
-        bat 'Map_Shares.bat'
+      parallel {
+        stage('Step 2') {
+          steps {
+            bat 'Map_Shares.bat'
+          }
+        }
+        stage('step') {
+          steps {
+            build 'map'
+          }
+        }
       }
     }
     stage('powershell') {
