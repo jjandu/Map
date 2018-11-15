@@ -30,6 +30,7 @@ pipeline {
         stage('job built') {
           steps {
             echo 'MOFO'
+            powershell 'mapcheck.ps1'
           }
         }
       }
